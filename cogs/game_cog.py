@@ -260,7 +260,8 @@ class CidadeDormeCog(commands.Cog):
                 name = game.players[result["hunter_pending"]].display_name
                 await channel.send(f"🏹 {name} era o Caçador! Ele pode usar `/vingar` na DM.")
                 await self.dm(result["hunter_pending"], "🏹 Você morreu! Use `/vingar @jogador` para atirar em alguém antes de partir.")
-              if await self.maybe_end_game(game, channel):
+
+            if await self.maybe_end_game(game, channel):
                 return
             await self.announce_night_start(game)
 
